@@ -9,12 +9,8 @@ const { Schema, model } = require('mongoose');
         pais: String,
         salario: Number,
         empresa_id: Number,
-        created_at: Date,
-        updated_at: Date
+        created_at: String,
+        updated_at: String
     });
-      
-    const User = model('users', UserSchema);
 
-module.exports = {
-    User,
-};
+module.exports = model('users', UserSchema);

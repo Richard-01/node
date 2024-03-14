@@ -6,7 +6,7 @@ let conn = null;
 const connector = async () => {
   try {
     if (conn === null) {
-      conn = await mongoose.createConnection(MONGODB_URI, {
+      conn = await mongoose.connect(MONGODB_URI, {
         serverSelectionTimeoutMS: 10000,
         socketTimeoutMS: 45000,
       });
