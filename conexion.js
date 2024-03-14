@@ -10,6 +10,7 @@ const connector = async () => {
         serverSelectionTimeoutMS: 10000,
         socketTimeoutMS: 45000,
       });
+      console.log('Conectado a la base de datos');
     }
     return conn;
 
@@ -20,4 +21,6 @@ const connector = async () => {
 };
 
 
-module.exports = connector;
+module.exports = {
+  connector,
+};

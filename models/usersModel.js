@@ -1,10 +1,6 @@
-const mongoose = require('mongoose');
-const conexion = require('../conexion');
+const { Schema, model } = require('mongoose');
 
-const getUserModel = async () =>{
-    const conn = await conexion();
-
-    const UserSchema = new mongoose.Schema({
+    const UserSchema = new Schema({
         id: Number,
         nombres: String,
         apellidos: String,
@@ -17,10 +13,8 @@ const getUserModel = async () =>{
         updated_at: Date
     });
       
-    return conn.model('User', UserSchema);
-
-}
+    const User = model('users', UserSchema);
 
 module.exports = {
-    getUserModel,
+    User,
 };
