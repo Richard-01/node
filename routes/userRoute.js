@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 
-router.get('/users', UserController.getAllUsers);
+router.get('/', UserController.getAllUsers);
 
 module.exports = {
     router,
