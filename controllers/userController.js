@@ -20,6 +20,26 @@ const controllers = {
             console.error('Error al obtener los usuarios', error);
             res.status(500).json({ error: error.message });
         }
+    },
+    
+    getUserById: async (req, res) => {
+        try {
+            const user = await User.findById(req.params.id);
+            res.json(user);
+        } catch (error) {
+            console.error('Error al obtener el usuario', error);
+            res.status(500).json({ error: error.message });
+        }
+    },
+
+    createUser: async (req, res) => {
+        try {
+            const user = await User.create(req.body);
+            res.json(user);
+        } catch (error) {
+            console.error('Error al crear el usuario', error);
+            res.status(500).json({ error: error.message });
+        }
     }
 };
 
