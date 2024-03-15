@@ -14,7 +14,7 @@ const controllers = {
 
     getAllUsers: async (req, res) => {
         try {
-            const users = await User.find();
+            const users = await User.find().limit(20);
             res.json(users);
         } catch (error) {
             console.error('Error al obtener los usuarios', error);

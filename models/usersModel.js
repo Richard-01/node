@@ -9,8 +9,8 @@ const { Schema, model } = require('mongoose');
         pais: String,
         salario: Number,
         empresa_id: Number,
-        created_at: String,
-        updated_at: String
+        created_at: Date,
+        updated_at: Date
     });
 
 module.exports = model('users', UserSchema);
